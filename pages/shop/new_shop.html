@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -116,32 +118,24 @@
                 <a href="new_shop.html">
                   <i class="fa fa-circle-o"></i>添加商铺</a>
               </li>
+              <li>
+                <a href="category.html">
+                  <i class="fa fa-circle-o"></i>商铺类别</a>
+              </li>
             </ul>
           </li>
           <li class="treeview">
             <a href="#">
-              <i class="fa fa-files-o"></i>
-              <span>Layout Options</span>
+              <i class="fa fa-area-chart"></i>
+              <span>活动管理</span>
               <span class="pull-right-container">
-                <span class="label label-primary pull-right">4</span>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
               <li>
-                <a href="pages/layout/top-nav.html">
-                  <i class="fa fa-circle-o"></i> Top Navigation</a>
-              </li>
-              <li>
-                <a href="pages/layout/boxed.html">
-                  <i class="fa fa-circle-o"></i> Boxed</a>
-              </li>
-              <li>
-                <a href="pages/layout/fixed.html">
-                  <i class="fa fa-circle-o"></i> Fixed</a>
-              </li>
-              <li>
-                <a href="pages/layout/collapsed-sidebar.html">
-                  <i class="fa fa-circle-o"></i> Collapsed Sidebar</a>
+                <a href="../activity/list.html">
+                  <i class="fa fa-circle-o"></i>活动列表</a>
               </li>
             </ul>
           </li>
@@ -427,14 +421,14 @@
       <section class="content">
         <!-- /.row -->
         <div class="box box-default">
-          <div class="box-body">
-            <div class="box-header">
-              <div class="row">
-                <div class="col-xs-12">
-                  <h3 class="box-title">新增商铺</h3>
-                </div>
+          <div class="box-header">
+            <div class="row">
+              <div class="col-xs-12">
+                <h3 class="box-title">新增商铺</h3>
               </div>
             </div>
+          </div>
+          <div class="box-body">
             <form role="form">
               <div class="box-body">
                 <!-- 选择语言 -->
@@ -452,36 +446,109 @@
                   <div class="col-md-8">
                     <div class="form-group">
                       <label>商铺名</label>
-                      <input type="text" name="shop-name" class="form-control" id="shopName" placeholder="请输入商铺名"/>
+                      <input type="text" name="shop-name" class="form-control" id="shopName" placeholder="请输入商铺名" />
+                    </div>
+                  </div>
+                </div>
+                <!-- 文字简介 -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>简介</label>
+                      <input type="text" class="form-control" placeholder="请输入简介">
+                    </div>
+                  </div>
+                </div>
+                <!-- 营业时间 -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>营业时间</label>
+                      <input type="text" class="form-control" placeholder="请输入营业时间">
+                    </div>
+                  </div>
+                </div>
+                <!-- 官网链接 -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>官网链接</label>
+                      <input type="text" class="form-control" placeholder="请输入官网链接">
+                    </div>
+                  </div>
+                </div>
+                <!-- 联系电话 -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>联系电话</label>
+                      <input type="tel" class="form-control" placeholder="请输入联系电话">
+                    </div>
+                  </div>
+                </div>
+                <!-- 店铺位置 -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>店铺位置</label>
+                      <input type="tel" class="form-control" placeholder="请输入店铺所在位置">
+                    </div>
+                  </div>
+                </div>
+                <!-- 所属类别 -->
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>所属大类</label>
+                      <select class="form-control select1">
+                        <option selected="selected">大类1</option>
+                        <option>大类2</option>
+                        <option>大类3</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>所属小类</label>
+                      <select class="form-control select2" multiple="multiple" data-placeholder="选择小类" style="width: 100%;">
+                        <option>小类1</option>
+                        <option>小类2</option>
+                        <option>小类3</option>
+                        <option>小类4</option>
+                      </select>
                     </div>
                   </div>
                 </div>
                 <!-- 上传Logo -->
-                <div class="row">
-                  <div class="col-md-2">
-                    <div class="from-group">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-2">
                       <label>上传Logo图</label>
                       <div class="form-control btn btn-success btn-block fileinput-button">
                         <span>上传</span>
                         <input type="file" onchange="changeLogo(this)" accept="image/png, image/jpeg, image/gif, image/jpg" id="logo" style="position:absolute;width:100%;height:100%;top:0;left:0;opacity: 0;">
                       </div>
                     </div>
+                    <img src="" id="logo-img" class="col-md-4" alt="">
                   </div>
-                  <img src="" id="logo-img" class="col-md-4" alt="">
                 </div>
                 <!-- 上传商铺简介页面形象图 -->
-                      <div class="from-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>上传商铺简介页面形象图(至少两张)</label>
-                        <div class="form-control btn btn-success btn-block fileinput-button">
-                          <span>上传</span>
-                          <input type="file" onchange="changeLogo(this)" accept="image/png, image/jpeg, image/gif, image/jpg" id="page-file" style="position:absolute;width:100%;height:100%;top:0;left:0;opacity: 0;">
-                        </div>
-                      </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-3">上传商铺简介页面形象图</label>
+                    <div class="btn btn-success fileinput-button col-md-1">
+                      <span>添加图片</span>
+                      <input type="file" onchange="uploadPageImg(this)" multiple="multiple" accept="image/png, image/jpeg, image/gif, image/jpg"
+                        id="page-file" style="position:absolute;width:100%;height:100%;top:0;left:0;opacity: 0;">
                     </div>
-                    <img src="" id="page-img" class="col-md-4" alt="">
                   </div>
+                  <br/>
+                  <div class="row" id="page-img-list"></div>
+                </div>
+
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right">确认添加</button>
               </div>
             </form>
           </div>
@@ -709,6 +776,8 @@
   <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="../../bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Select2 -->
+  <script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button);
@@ -748,13 +817,29 @@
   <script>
     // 上传Logo图
     function changeLogo() {
-      var reads= new FileReader();
-      f=document.getElementById('logo').files[0];
+      var reads = new FileReader();
+      var f = document.getElementById('logo').files[0];
       reads.readAsDataURL(f);
-      reads.onload=function (e) {
-          document.getElementById('logo-img').src=this.result;
+      reads.onload = function (e) {
+        document.getElementById('logo-img').src = this.result;
       }
     }
+    // 上传商铺简介页面形象图
+    function uploadPageImg() {
+      var f = document.getElementById('page-file').files;
+      for (var i = 0; i < f.length; i++) {
+        var reads = new FileReader();
+        reads.readAsDataURL(f[i]);
+        reads.onload = function () {
+          var str = "<img src='" + this.result + "' class='col-md-4'></img>";
+          var html = $('#page-img-list').html();
+          $('#page-img-list').html(html + str);
+        }
+      }
+    }
+    $(function () {
+      $('.select2').select2()
+    })
   </script>
 </body>
 
