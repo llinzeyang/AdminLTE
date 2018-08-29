@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
-  
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,7 +84,7 @@
             </li>
             <!-- Control Sidebar Toggle Button -->
             <li>
-              <a href="pages/examples/login.html">退出</a>
+              <a href="../login/login.html">退出</a>
             </li>
           </ul>
         </div>
@@ -143,6 +143,24 @@
                   <i class="fa fa-circle-o"></i>活动类别管理</a>
               </li>
             </ul>
+          </li>
+          <li>
+            <a href="../customer/customer.html">
+              <i class="fa fa-user-plus"></i>
+              <span>顾客服务</span>
+            </a>
+          </li>
+          <li>
+            <a href="../about/about.html">
+              <i class="fa fa-code-fork"></i>
+              <span>关于万象城</span>
+            </a>
+          </li>
+          <li>
+            <a href="../statistics/statistics.html">
+              <i class="fa fa-bullseye"></i>
+              <span>统计</span>
+            </a>
           </li>
         </ul>
       </section>
@@ -231,11 +249,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright &copy; 2014-2016
-        <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; 2014-2016 万象城后台管理系统
     </footer>
   </div>
   <!-- ./wrapper -->
@@ -287,26 +301,26 @@
         autoclose: true
       })
       CKEDITOR.replace('editor1',
-      {
-             toolbar :
-             [
-                //加粗     斜体，     下划线      穿过线      下标字        上标字
-                ['Bold','Italic','Underline','Strike','Subscript','Superscript'],
-                // 数字列表          实体列表            减小缩进    增大缩进
-                ['NumberedList','BulletedList','-','Outdent','Indent'],
-                //左对 齐             居中对齐          右对齐          两端对齐
-                ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-                //图片     水平线            特殊字符        分页符
-                ['Image','HorizontalRule','SpecialChar','PageBreak'],
-                '/',
-                // 样式       格式      字体    字体大小
-                ['Styles','Format','Font','FontSize'],
-                //文本颜色     背景颜色
-                ['TextColor','BGColor'],
-                //全屏           显示区块
-                ['Maximize', 'ShowBlocks','-']
-             ],
-             filebrowserImageUploadUrl : '/test', 
+        {
+          toolbar:
+            [
+              //加粗     斜体，     下划线      穿过线      下标字        上标字
+              ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+              // 数字列表          实体列表            减小缩进    增大缩进
+              ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+              //左对 齐             居中对齐          右对齐          两端对齐
+              ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+              //图片     水平线            特殊字符        分页符
+              ['Image', 'HorizontalRule', 'SpecialChar', 'PageBreak'],
+              '/',
+              // 样式       格式      字体    字体大小
+              ['Styles', 'Format', 'Font', 'FontSize'],
+              //文本颜色     背景颜色
+              ['TextColor', 'BGColor'],
+              //全屏           显示区块
+              ['Maximize', 'ShowBlocks', '-']
+            ],
+          filebrowserImageUploadUrl: '/test',
         })
     })
   </script>
